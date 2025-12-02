@@ -73,7 +73,7 @@ variables in your environment, or edit the command, replacing the proposed varia
 
 Deploy the Spotfire Server using an existing database:
 ```bash
-helm install my-release . \
+helm install spotfire-server . \
     --set acceptEUA=true \
     --set global.spotfire.image.registry="127.0.0.1:32000" \
     --set global.spotfire.image.pullPolicy="Always" \
@@ -82,7 +82,7 @@ helm install my-release . \
     --set database.create-db.adminUsername="$DB_ADMIN" \
     --set database.create-db.adminPassword="$DB_PASSWORD" \
     --set database.create-db.enabled=true \
-    -f my-values.yml
+    -f values.yml
 ```
 
 **Note**: This Spotfire Helm chart requires setting the parameter `acceptEUA` or the parameter `global.spotfire.acceptEUA` to the value `true`.
